@@ -35,3 +35,10 @@ function mostrarAmigos() {
 }
 // Llama a la función mostrarAmigos cada vez que se agregue un nuevo amigo
 document.getElementById("button-add").addEventListener("click", mostrarAmigos)
+
+//Implementa una función para sortear los amigos
+function sortearAmigos() {
+    let aleatorio = amigos[Math.floor(Math.random() * amigos.length)];
+    console.log(aleatorio);
+    alert(`Tu amigo secreto es: ${aleatorio.nombre}`);
+}
