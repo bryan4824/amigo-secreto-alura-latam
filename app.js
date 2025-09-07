@@ -12,6 +12,7 @@ document.getElementById("button-add").addEventListener("click", () => {
     }else{
         const nuevoAmigo = {nombre}// esto es igual a {nombre: nombre} y hace un objeto
         amigos.push(nuevoAmigo)// agrega el objeto al array
+        console.log(amigos)
     }
 
 })
@@ -20,3 +21,17 @@ document.getElementById("button-add").addEventListener("click", () => {
 document.getElementById("button-add").addEventListener("click", () => {
     document.getElementById("amigo").value = ""
 })
+
+//Crea una función que recorra el array amigos y agregue cada nombre como un elemento <li> dentro de una lista HTML. 
+function mostrarAmigos() {
+    const lista = document.getElementById("listaAmigos")
+    lista.innerHTML = "" // Limpiar la lista antes de mostrar los amigos
+
+    amigos.forEach(amigo => {
+        const li = document.createElement("li")
+        li.textContent = amigo.nombre
+        lista.appendChild(li)
+    })
+}
+// Llama a la función mostrarAmigos cada vez que se agregue un nuevo amigo
+document.getElementById("button-add").addEventListener("click", mostrarAmigos)
